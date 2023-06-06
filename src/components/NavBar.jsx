@@ -5,11 +5,11 @@ import PokemonCard from "./PokemonCard";
 
 function NavBar({ pokemonIndex, pokemonList, onNextClick, onPreviousClick }) {
   const handleNextClick = () => {
-    onNextClick(); // Appel de la fonction onNextClick fournie en tant que prop
+    onNextClick(); 
   };
 
   const handlePreviousClick = () => {
-    onPreviousClick(); // Appel de la fonction onPreviousClick fournie en tant que prop
+    onPreviousClick(); 
   };
 
   return (
