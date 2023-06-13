@@ -1,24 +1,21 @@
 
 
-import { useState } from "react";
-import PokemonCard from "./PokemonCard";
+const NavBar = (props) => {
+const { pokemonIndex, handleClickPokemon, pokemonList } = props;
 
-function NavBar({ pokemonIndex, pokemonList, onNextClick, onPreviousClick }) {
-  const handleNextClick = () => {
-    onNextClick(); 
-  };
-
-  const handlePreviousClick = () => {
-    onPreviousClick(); 
-  };
+setTimeout(() => {
+  if (pokemonList[pokemonIndex].name === "Pikachu") alert("Pika Pikachu !!!");
+}, "100")
 
   return (
-    <div>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <button onClick={handlePreviousClick}>Précédent</button>
-      <button onClick={handleNextClick}>Suivant</button>
-    </div>
-  );
-}
+    <>
+    {pokemonList.map((pokemon, index) => (
+      <button key={index} onClick={() => handleClickPokemon(index)}>
+        {pokemon.name}
+      </button>
+    ))}
+  </>
+  )
+};
 
 export default NavBar;
